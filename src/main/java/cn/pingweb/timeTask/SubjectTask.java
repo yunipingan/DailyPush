@@ -9,10 +9,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class SubjectTask {
 
-    @Scheduled(cron = "0/1 * * * * ?")
+    @Scheduled(cron = "0 39 23 * * ?")
     public void sendSubject () {
         System.out.println(Thread.currentThread().getName()+Thread.currentThread().getId()+ "send subject!");
-
     }
 
     public void generateSubject () {
