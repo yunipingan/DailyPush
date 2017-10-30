@@ -27,4 +27,31 @@ public class SubjectTask {
         System.out.println("generate subject!");
     }
 
+    @Scheduled(cron = "0 0 * * *")
+    public void resetDailyTask () {
+        System.out.println(Thread.currentThread().getName()+Thread.currentThread().getId()+ "send subject!");
+        String toUser = "523786283@qq.com";
+        String subject = "DailyPush";
+        String content = "Hello World!  ——From YP";
+        mailService.sendSimpleMail(toUser, subject, content);
+    }
+
+    @Scheduled(cron = "0 0 * * 0")
+    public void resetWeekTask () {
+        System.out.println(Thread.currentThread().getName()+Thread.currentThread().getId()+ "send subject!");
+        String toUser = "523786283@qq.com";
+        String subject = "DailyPush";
+        String content = "Hello World!  ——From YP";
+        mailService.sendSimpleMail(toUser, subject, content);
+    }
+
+    @Scheduled(cron = "0 0 1 * *")
+    public void resetMonthTask () {
+        System.out.println(Thread.currentThread().getName()+Thread.currentThread().getId()+ "send subject!");
+        String toUser = "523786283@qq.com";
+        String subject = "DailyPush";
+        String content = "Hello World!  ——From YP";
+        mailService.sendSimpleMail(toUser, subject, content);
+    }
+
 }
